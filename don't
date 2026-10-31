@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Non-Stop Tab Opener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #1e1e2e;
+            color: #fff;
+        }
+        .message {
+            text-align: center;
+        }
+        .message h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .message p {
+            color: #a0a0b0;
+        }
+    </style>
+</head>
+<body onload="startLoop()">
+    <div class="message">
+        <h1>Opening new tabs endlessly…</h1>
+        <p>Close this tab to stop.</p>
+    </div>
+
+    <script>
+        function openTab() {
+            var text = '<html>' +
+                       '<head><title>You Are An Idiot</title>' +
+                       '<style>body{' +
+                       'display:flex;justify-content:center;align-items:center;' +
+                       'height:100vh;margin:0;background:#000;color:#ff4444;' +
+                       'font-family:Arial,sans-serif;font-size:3rem;' +
+                       'font-weight:bold;text-transform:uppercase;' +
+                       'letter-spacing:5px;}}' +
+                       '</style></head>' +
+                       '<body><h1>You Are An Idiot</h1></body>' +
+                       '</html>';
+
+            window.open('data:text/html,' + encodeURIComponent(text), '_blank');
+        }
+
+        function startLoop() {
+            // Opens a new tab every 500 milliseconds (adjust as needed)
+            setInterval(openTab, 500);
+        }
+    </script>
+</body>
+</html>
